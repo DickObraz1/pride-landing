@@ -176,6 +176,7 @@ body::before {
   line-height: 1.15;
   letter-spacing: 0.02em;
   padding-left: 16px;
+  white-space: pre-line;
   /* rainbow gradient text — dissolves the white into spectrum */
   background: linear-gradient(
     to right,
