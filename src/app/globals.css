@@ -176,6 +176,26 @@ body::before {
   line-height: 1.15;
   letter-spacing: 0.02em;
   padding-left: 16px;
+  /* rainbow gradient text — dissolves the white into spectrum */
+  background: linear-gradient(
+    to right,
+    #ffffff 0%,
+    #E40303 18%,
+    #FF8C00 34%,
+    #FFED00 50%,
+    #008026 64%,
+    #004DFF 80%,
+    #750787 100%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: rainbowWave 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .offer-text { animation: none; }
 }
 
 /* ─── Identity selector ─────────────────────────────────────────────── */

@@ -211,8 +211,8 @@ export default function PrideLanding() {
             <div className="rainbow-band" />
           </div>
 
-          {/* Book cover image — portrait, centered */}
-          <div style={{ background: 'white', borderRadius: '0 0 4px 4px', padding: '20px 20px 24px' }}>
+          {/* Book cover image — portrait, centered, no background */}
+          <div style={{ padding: '20px 20px 4px' }}>
             <HeroImage />
           </div>
         </section>
