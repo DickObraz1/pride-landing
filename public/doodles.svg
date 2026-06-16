@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500">
+
+  <!-- ✦ 4-pt star — top left area -->
+  <path d="M80 50 L83 57 L90 60 L83 63 L80 70 L77 63 L70 60 L77 57Z"
+        fill="none" stroke="black" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- small circle — top, right-of-center -->
+  <circle cx="200" cy="95" r="6" fill="none" stroke="black" stroke-width="1.5"/>
+
+  <!-- ✶ asterisk — top right -->
+  <g stroke="black" stroke-width="1.5" stroke-linecap="round">
+    <line x1="350" y1="33" x2="350" y2="47"/>
+    <line x1="343" y1="40" x2="357" y2="40"/>
+    <line x1="345" y1="35" x2="355" y2="45"/>
+    <line x1="355" y1="35" x2="345" y2="45"/>
+  </g>
+
+  <!-- ♡ heart outline — far right, top -->
+  <path d="M455 128 C449 120 438 114 440 106 C442 99 451 99 455 106
+           C459 99 468 99 470 106 C472 114 461 120 455 128Z"
+        fill="none" stroke="black" stroke-width="1.5"/>
+
+  <!-- 🌈 rainbow arc — left-center (3 concentric arcs = rainbow shape) -->
+  <path d="M138 188 A22 22 0 0 1 182 188" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M145 188 A15 15 0 0 1 175 188" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M152 188 A8  8  0 0 1 168 188" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- ✦ bigger 4-pt star — right-center -->
+  <path d="M420 200 L424 210 L434 214 L424 218 L420 228 L416 218 L406 214 L416 210Z"
+        fill="none" stroke="black" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- small circle — left -->
+  <circle cx="48" cy="288" r="7" fill="none" stroke="black" stroke-width="1.5"/>
+
+  <!-- ✶ asterisk — center -->
+  <g stroke="black" stroke-width="1.5" stroke-linecap="round">
+    <line x1="275" y1="318" x2="275" y2="332"/>
+    <line x1="268" y1="325" x2="282" y2="325"/>
+    <line x1="270" y1="320" x2="280" y2="330"/>
+    <line x1="280" y1="320" x2="270" y2="330"/>
+  </g>
+
+  <!-- ✦ small 4-pt star — bottom left -->
+  <path d="M118 398 L121 405 L128 408 L121 411 L118 418 L115 411 L108 408 L115 405Z"
+        fill="none" stroke="black" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- 🌈 rainbow arc — bottom right area -->
+  <path d="M382 383 A18 18 0 0 1 418 383" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M389 383 A11 11 0 0 1 411 383" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M396 383 A4  4  0 0 1 404 383" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- ♡ small heart — bottom center -->
+  <path d="M250 472 C244 464 234 458 236 450 C238 443 247 443 250 450
+           C253 443 262 443 264 450 C266 458 256 464 250 472Z"
+        fill="none" stroke="black" stroke-width="1.5"/>
+
+  <!-- ✶ asterisk — bottom left corner -->
+  <g stroke="black" stroke-width="1.5" stroke-linecap="round">
+    <line x1="32" y1="448" x2="32" y2="462"/>
+    <line x1="25" y1="455" x2="39" y2="455"/>
+    <line x1="27" y1="450" x2="37" y2="460"/>
+    <line x1="37" y1="450" x2="27" y2="460"/>
+  </g>
+
+  <!-- ✦ tiny 4-pt star — bottom right corner -->
+  <path d="M470 462 L472 468 L478 470 L472 472 L470 478 L468 472 L462 470 L468 468Z"
+        fill="none" stroke="black" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- 🍆 eggplant #1 — center, rotate +12° -->
+  <!-- viewBox 0 0 48 48, visual center ≈ (24,28) -->
+  <g transform="translate(312,248) rotate(12) scale(0.9) translate(-24,-28)"
+     fill="none" stroke="black" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M30 14 C40 18 40 38 26 42 C14 45 8 34 14 26 C18 20 24 18 30 14 Z"/>
+    <path d="M30 14 C29 10 31 7 34 7"/>
+    <path d="M30 14 C33 12 37 12 39 14"/>
+  </g>
+
+  <!-- 🍆 eggplant #2 — left side, upper third, rotate -22° -->
+  <g transform="translate(72,162) rotate(-22) scale(0.9) translate(-24,-28)"
+     fill="none" stroke="black" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M30 14 C40 18 40 38 26 42 C14 45 8 34 14 26 C18 20 24 18 30 14 Z"/>
+    <path d="M30 14 C29 10 31 7 34 7"/>
+    <path d="M30 14 C33 12 37 12 39 14"/>
+  </g>
+
+  <!-- 🍆 pindík #1 — right side, top half, tilted -25° -->
+  <!-- viewBox 0 0 48 48, visual center ≈ (24,34); scale(0.9) → stroke-width="3" renders as 1.5px -->
+  <g transform="translate(318,138) rotate(-25) scale(0.9) translate(-24,-34)"
+     fill="none" stroke="black" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 42 L20 22 A4 4 0 0 1 28 22 L28 42"/>
+    <circle cx="16" cy="42" r="4"/>
+    <circle cx="32" cy="42" r="4"/>
+  </g>
+
+  <!-- 🍆 pindík #2 — left side, lower third, tilted +20° -->
+  <g transform="translate(172,368) rotate(20) scale(0.9) translate(-24,-34)"
+     fill="none" stroke="black" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 42 L20 22 A4 4 0 0 1 28 22 L28 42"/>
+    <circle cx="16" cy="42" r="4"/>
+    <circle cx="32" cy="42" r="4"/>
+  </g>
+
+  <!-- 🍆 pindík #3 — center-right, mid-page, tilted -10° -->
+  <g transform="translate(440,292) rotate(-10) scale(0.9) translate(-24,-34)"
+     fill="none" stroke="black" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 42 L20 22 A4 4 0 0 1 28 22 L28 42"/>
+    <circle cx="16" cy="42" r="4"/>
+    <circle cx="32" cy="42" r="4"/>
+  </g>
+
+</svg>

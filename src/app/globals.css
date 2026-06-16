@@ -1,0 +1,451 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design tokens ─────────────────────────────────────────────────── */
+:root {
+  --bg: #fff5f8;
+  --ink: #111111;
+  --rainbow: linear-gradient(
+    to right,
+    #e40303 0%,
+    #ff8c00 20%,
+    #ffed00 40%,
+    #008026 60%,
+    #004dff 80%,
+    #750787 100%
+  );
+  --rainbow-diag: linear-gradient(
+    135deg,
+    #e40303 0%,
+    #ff8c00 20%,
+    #ffed00 40%,
+    #008026 60%,
+    #004dff 80%,
+    #750787 100%
+  );
+  --border: 3px solid var(--ink);
+  --radius-sharp: 4px;
+  --radius-card: 6px;
+}
+
+/* ─── Base ──────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  /* soft rainbow glow: warm in top-left, cool in bottom-right */
+  background-image:
+    radial-gradient(
+      ellipse 380px 380px at -80px -80px,
+      rgba(228, 3, 3, 0.12) 0%,
+      rgba(255, 140, 0, 0.07) 40%,
+      transparent 68%
+    ),
+    radial-gradient(
+      ellipse 320px 320px at calc(100% + 80px) calc(100% + 80px),
+      rgba(0, 77, 255, 0.12) 0%,
+      rgba(117, 7, 135, 0.07) 40%,
+      transparent 68%
+    );
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100dvh;
+  position: relative;
+  isolation: isolate;
+}
+
+/* outline doodle tile — stars, arcs, hearts, asterisks at ~9% opacity */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('/doodles.svg');
+  background-repeat: repeat;
+  background-size: 500px 500px;
+  opacity: 0.09;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ─── Typography ────────────────────────────────────────────────────── */
+.font-display {
+  font-family: var(--font-bebas), 'Impact', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+/* ─── Rainbow stripe (top of page) ─────────────────────────────────── */
+.rainbow-top {
+  height: 10px;
+  background: var(--rainbow);
+  width: 100%;
+}
+
+/* ─── Diagonal rainbow band (hero decoration) ───────────────────────── */
+.rainbow-band-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 56px;
+  margin: 0 -20px;
+}
+
+.rainbow-band {
+  position: absolute;
+  inset: 0;
+  background: var(--rainbow);
+  transform: skewY(-3deg) translateY(-8px);
+  transform-origin: left center;
+}
+
+.rainbow-band::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--ink);
+}
+
+.rainbow-band::before {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--ink);
+}
+
+/* ─── Lang toggle ──────────────────────────────────────────────────── */
+.lang-btn {
+  min-height: 36px;
+  padding: 0 16px;
+  background: transparent;
+  border: var(--border);
+  border-radius: var(--radius-sharp);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 0.8125rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  color: var(--ink);
+  transition: background 0.12s, color 0.12s;
+}
+
+.lang-btn:active {
+  background: var(--ink);
+  color: #fff;
+}
+
+/* ─── Offer card ────────────────────────────────────────────────────── */
+.offer-card {
+  background: var(--ink);
+  color: #fff;
+  padding: 20px 20px;
+  border-radius: var(--radius-sharp);
+  position: relative;
+  overflow: hidden;
+}
+
+.offer-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  background: var(--rainbow);
+}
+
+.offer-text {
+  font-family: var(--font-bebas), 'Impact', sans-serif;
+  font-size: 1.625rem;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  padding-left: 16px;
+}
+
+/* ─── Identity selector ─────────────────────────────────────────────── */
+.identity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.identity-card {
+  min-height: 64px;
+  padding: 14px 10px;
+  background: #fff;
+  border: var(--border);
+  border-radius: var(--radius-card);
+  font-family: var(--font-bebas), 'Impact', sans-serif;
+  font-size: 1.375rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  color: var(--ink);
+  transition: transform 0.12s ease, background 0.12s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.identity-card:active {
+  transform: scale(0.96);
+}
+
+.identity-card--active {
+  background: var(--rainbow-diag);
+  color: var(--ink);
+  transform: scale(1.06);
+  border-color: var(--ink);
+}
+
+/* ─── Form ──────────────────────────────────────────────────────────── */
+.form-field {
+  display: block;
+  width: 100%;
+  min-height: 52px;
+  padding: 14px 16px;
+  background: #fff;
+  border: var(--border);
+  border-radius: var(--radius-card);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 1rem;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.15s;
+  -webkit-appearance: none;
+}
+
+.form-field::placeholder {
+  color: #888;
+}
+
+.form-field:focus {
+  border-color: #004dff;
+  box-shadow: 0 0 0 3px rgba(0, 77, 255, 0.15);
+}
+
+.consent-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.consent-box {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  border: var(--border);
+  border-radius: 2px;
+  cursor: pointer;
+  accent-color: var(--ink);
+}
+
+.consent-text {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.consent-text a {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* ─── Submit button ─────────────────────────────────────────────────── */
+.submit-btn {
+  display: block;
+  width: 100%;
+  min-height: 60px;
+  padding: 16px 24px;
+  background: var(--rainbow);
+  border: var(--border);
+  border-radius: var(--radius-sharp);
+  font-family: var(--font-bebas), 'Impact', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.submit-btn:not(:disabled):active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+/* ─── Error message ─────────────────────────────────────────────────── */
+.error-msg {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #d00;
+  padding: 10px 14px;
+  background: #fff0f0;
+  border: 2px solid #d00;
+  border-radius: var(--radius-sharp);
+}
+
+/* ─── Success block ─────────────────────────────────────────────────── */
+.success-block {
+  background: var(--ink);
+  color: #fff;
+  padding: 32px 24px;
+  border-radius: var(--radius-sharp);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.success-block::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: var(--rainbow);
+}
+
+.success-title {
+  font-family: var(--font-bebas), 'Impact', sans-serif;
+  font-size: 2.25rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.success-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ─── Product strip ──────────────────────────────────────────────────── */
+.product-scroll {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.product-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.product-card {
+  flex-shrink: 0;
+  width: 140px;
+  height: 196px;
+  border: var(--border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: #e8e8e8;
+}
+
+.product-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.product-placeholder span {
+  font-family: var(--font-bebas), 'Impact', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: #666;
+}
+
+/* ─── Hero image ────────────────────────────────────────────────────── */
+.hero-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  border: var(--border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-img-placeholder {
+  font-family: var(--font-bebas), 'Impact', sans-serif;
+  font-size: 1.5rem;
+  color: #999;
+  letter-spacing: 0.06em;
+}
+
+/* ─── Section labels ────────────────────────────────────────────────── */
+.section-label {
+  font-family: var(--font-bebas), 'Impact', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+
+/* ─── Rainbow wave animation ────────────────────────────────────────── */
+@keyframes rainbowWave {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.rainbow-wave {
+  background-size: 220% 100%;
+  animation: rainbowWave 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rainbow-wave { animation: none; }
+}
+
+/* Apply wave to top stripe, hero diagonal band, and offer side bar */
+.rainbow-top,
+.rainbow-band,
+.offer-card::before {
+  background-size: 220% 100%;
+  animation: rainbowWave 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rainbow-top,
+  .rainbow-band,
+  .offer-card::before {
+    animation: none;
+  }
+}
+
+/* ─── Footer ─────────────────────────────────────────────────────────── */
+.footer-text {
+  font-size: 0.8125rem;
+  color: #555;
+  font-weight: 600;
+}
