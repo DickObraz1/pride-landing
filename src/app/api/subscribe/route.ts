@@ -19,8 +19,6 @@ export async function POST(req: NextRequest) {
 
   const apiKey = process.env.ECOMAIL_API_KEY;
   const listId = process.env.ECOMAIL_LIST_ID;
-  // TODO: replace default 'gender' with the actual custom field code from Ecomail
-  const genderField = process.env.ECOMAIL_GENDER_FIELD ?? 'gender';
 
   if (!apiKey || !listId) {
     console.error('[subscribe] Missing ECOMAIL_API_KEY or ECOMAIL_LIST_ID env vars');
@@ -35,11 +33,9 @@ export async function POST(req: NextRequest) {
     if (parts.length > 1) subscriberData.surname = parts.slice(1).join(' ');
   }
 
-  if (gender) {
-    subscriberData.custom_fields = { [genderField]: gender };
-  }
-
-  subscriberData.tags = ['pride2026'];
+  const tags = ['pride2026'];
+  if (gender) tags.push(gender); // 'guy' | 'girl' | 'queer'
+  subscriberData.tags = tags;
 
   if (lang) {
     subscriberData.language = lang;
