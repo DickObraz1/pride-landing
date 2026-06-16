@@ -21,7 +21,7 @@ const PRODUCTS = [
   { key: 'yoni', label: 'YONI', file: 'yoni.webp' },
   { key: 'kamasutra', label: 'Kama Sutra', file: 'kamasutra.webp' },
   { key: 'bdsm', label: 'BDSM', file: 'bdsm.webp' },
-  { key: 'fmn', label: 'Fuck Mě Neser', file: 'fmn.webp' },
+  { key: 'dickobraz', label: 'DickObraz', file: 'dickobraz.webp' },
 ] as const;
 
 function ProductCard({ label, file }: { label: string; file: string }) {
@@ -310,9 +310,7 @@ export default function PrideLanding() {
         {/* ── Product strip ─────────────────────────────────── */}
         <section style={{ marginBottom: 28, background: 'white', borderRadius: 4, padding: '20px' }}>
           <p className="section-label">{t.productHeading}</p>
-          {/* TODO: Drop WebP images into /public/images/ — names must match:
-               fillmein.webp, yoni.webp, kamasutra.webp, bdsm.webp, fmn.webp
-               fillmein-hero.webp (hero above) */}
+{/* images: fillmein-hero.webp, fillmein.webp, yoni.webp, kamasutra.webp, bdsm.webp, dickobraz.webp */}
           <div className="product-scroll">
             {PRODUCTS.map(p => (
               <ProductCard key={p.key} label={p.label} file={p.file} />
