@@ -384,8 +384,9 @@ body::before {
 /* ─── Hero image ────────────────────────────────────────────────────── */
 .hero-img-wrap {
   position: relative;
-  width: 100%;
-  aspect-ratio: 3 / 2;
+  width: 62%;
+  margin: 0 auto;
+  aspect-ratio: 5 / 6;
   border: var(--border);
   border-radius: var(--radius-card);
   overflow: hidden;

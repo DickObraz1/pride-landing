@@ -190,26 +190,30 @@ export default function PrideLanding() {
 
         {/* ── Hero ─────────────────────────────────────────── */}
         <section style={{ marginBottom: 28 }}>
-          <HeroImage />
-
-          {/* Diagonal rainbow band below image */}
-          <div className="rainbow-band-wrap" style={{ margin: '0 -20px 0' }}>
-            <div className="rainbow-band" />
-          </div>
-
-          <div style={{ paddingTop: 20, paddingBottom: 20, background: 'white', borderRadius: '0 0 4px 4px' }}>
+          {/* Text first — message lands before the product visual */}
+          <div style={{ background: 'white', borderRadius: '4px 4px 0 0', padding: '20px 20px 20px' }}>
             <h1
               className="font-display"
               style={{ fontSize: 'clamp(3rem, 14vw, 5rem)', lineHeight: 0.95, marginBottom: 12 }}
             >
               {t.heroHeadline}
             </h1>
-            <p style={{ fontSize: '1.0625rem', lineHeight: 1.55, color: '#333', marginBottom: 10 }}>
+            <p style={{ fontSize: '1.0625rem', lineHeight: 1.55, color: '#333', marginBottom: 8 }}>
               {t.heroSubhead}
             </p>
             <p style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#555', fontStyle: 'italic' }}>
               {t.heroTagline}
             </p>
+          </div>
+
+          {/* Diagonal rainbow band separating text from product image */}
+          <div className="rainbow-band-wrap" style={{ margin: '0 -20px' }}>
+            <div className="rainbow-band" />
+          </div>
+
+          {/* Book cover image — portrait, centered */}
+          <div style={{ background: 'white', borderRadius: '0 0 4px 4px', padding: '20px 20px 24px' }}>
+            <HeroImage />
           </div>
         </section>
 
